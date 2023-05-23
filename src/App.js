@@ -16,11 +16,9 @@
  import "./App.css";
  //import { Footer, Blog, Possibility, Features, WhatGPT3, Header } from './containers';
  //import { Upload,UploadComponent, Navbar } from './components';
- import  MyComponent from "./components/segmentation/segmentation.js";
  import  Navbar from "./components/navbar/navbar.js";
- import  Upload from "./components/upload/upload.js";
  import  Header from "./containers/header/Header.js";
-import UploadComponent from "./components/segmentation/segmentation.js";
+import UploadComponent from "./components/upload/upload.js";
 function App() {
   return (
     <div className="App">
@@ -28,8 +26,7 @@ function App() {
         <Navbar />,
         <Header />
       </div>
-      <Upload />,
-      <UploadComponent />,
+      <UploadComponent />
     </div>
   );
 }
