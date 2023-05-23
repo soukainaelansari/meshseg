@@ -18,7 +18,7 @@
  //import { Upload,UploadComponent, Navbar } from './components';
  import  Navbar from "./components/navbar/navbar.js";
  import  Header from "./containers/header/Header.js";
-import UploadComponent from "./components/upload/upload.js";
+import Upload from "./components/upload/upload.js";
 function App() {
   return (
     <div className="App">
@@ -26,7 +26,7 @@ function App() {
         <Navbar />,
         <Header />
       </div>
-      <UploadComponent />
+      <Upload />
     </div>
   );
 }
