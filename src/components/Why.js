@@ -1,5 +1,5 @@
 import meter1 from "../assets/img/upload.png";
-import meter2 from "../assets/img/verified-account.png";
+import meter2 from "../assets/img/user-friendly.png";
 import meter3 from "../assets/img/image_2023-06-08_212726600-removebg-preview.png";
 import meter4 from "../assets/img/1584849.png";
 import meter5 from "../assets/img/9876324.png";
