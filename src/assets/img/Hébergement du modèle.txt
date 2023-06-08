@@ -1,0 +1,73 @@
+Introduction:
+
+Une fois l'application développée, optimisée, fiabilisée, il faut pouvoir la distribuer aux 
+utilisateurs de façon à ce qu'elle soit facilement accéssible et opérationnelle n'importe quand.Pour ce faire nous devons prendre des décisions qui conviennent aux ressources dont nécéssite notre application web.Nous discuterons alors des pratiques les plus courantes et mettrons en pratique celles qui présentent pour nous un réel avantage.
+
+Les différentes solutions:
+
+.Les services de cloud: Les plateformes de cloud telles que Amazon Web Services(AWS),Google Cloud Platform(GCP) ou Microsoft Azure offrent la possibilité de créer des instances virtuelles (Amazon EC2,GCP,Compute Engine,...) pour déployer des applications et des modèles de machine learning. Il suffit alors de configurer les ressources nécessaires pour exécuter le modèle , par exemple la mémoire et la puissance de calcul.
+
+.Les plateformes de conteneurisation: les conteneurs à l'instar de Docker, facilitent le déploiement des applications web.Il suffira de créer une image de conteneur contenant l'application,son serveur web et le backend qui éffectue les traitements à l'aide du modèle.Par la suite il convient de déployer l'application sur des services de conteneurisation comme Kubernetes,Docker Swarm ou AWS Elastic Container Service(ECS).
+
+.Les services d'hébergement managés: Ils proposent des solutions spécialement conçus pours les applications web basées sur des modèles de machine learning.Nous pouvons cité entre autre  Amazon SageMaker de AWS ,un service qui facilite le déploiement , la gestion et la mise à l'échelle de modèles de machine learning.
+
+.Les  plateformes d'applications sans serveur: Elles peuvent etre utilisées pour héberger nos applications web. Pour ce faire, il faut découper l'application en petites fonctions indépendantes qui sont exécutées à la demande, ce qui permet une mise à l'échelle automatique et une gestion simplifiée de l'infrastructure.Ce sont par exemple AWS Lambda, Google Cloud Functions ou Microsoft Azure Functions.
+
+.l'hébergement local: il est possible d'héberger l'application web sur notre propre infrastructure en configurant un serveur web et en déployant l'application ainsi que le modèle de machine learning dessus.Pour cela , il faut d'abord s'assurer que l'infrastructure dispose des ressources nécessaires pour prendre en charge l'exécution du modèle.
+
+
+Le choix de la solution:
+
+La meilleure solution doit prendre en compte des facteurs tels que :
+
+-la sécurité: elle est essentielle pour protéger les données sensibles et prévenir les attaques. le fournisseur d'hébergement doit proposer des outils de sécurité supplémentaires tels que des certificats SSL pour le chiffrement des données en transit, des mesures de protection contre les attaques DDoS, des politiques de sécurité rigoureuses,etc.
+
+
+-la disponibilité:le fournisseur d'hébergement doit garantir une disponibilité élevée pour que l'application soit en ligne et accessible pour les utilisateurs la plupart du temps. 
+
+
+-les performances: l'option choisit doit garantir une expérience utilisateur fluide.Il faut prendre en considération la puissance de calcul, la capacité de mémoire et les options de mise à l'échelle verticale ou horizontale proposées par le fournisseur d'hébergement.Les zones géographiques des centres de données peuvent aussi garantir des temps de réponse rapides aux utilisateurs.
+
+
+-les coûts: Il faut évaluer attentivement les coûts associés à chaque méthode d'hébergement et s'assurer qu'ils correspondent au budget.Il faut observer les coûts initiaux mais également ceux à long terme en tenant compte des besoins d'évolutivité et de croissance de l'application.
+
+Il est important de trouver un équilibre entre ces différents facteurs pour établir un choix cohérent.Par exemple, si la sécurité est une priorité absolue,Il faut choisir un fournisseur d'hébergement qui offre des fonctionnalités de sécurité avancées, même si cela implique des coûts plus élevés.
+
+...(le choix des encadrants)
+
+Configuration de Express.js:
+
+Bien qu'il existe de nombreux serveurs Web tels que Apache,Nginx et IIS (Internet Information Services), notre choix s'est porté vers Express.js étant donnée que nous utilisons Node.js.Il présente de nombreux avantages qui sont :une documentation riche et un support conséquent de la communauté,son minimalisme,sa flexibilité,son routing aisé, son modèle de Middleware et des performances élevées.
+
+Les étapes de la configuration d'Express.js sont les suivantes:
+.Initialisation du projet:
+Ouvrir une ligne de commande dans le répertoire et exécutez "npm init" pour initialiser un nouveau projet Node.js.
+
+.Installation d'Express.js:
+Exécutez la commande "npm install" express pour installer Express.js et toutes ses dépendances dans le projet.
+
+.Création du fichier principal du serveur: 
++Créez le fichier server.js .
++Importer Express.js en haut du fichier : const express = require('express');
++Créer une instance d'Express : const app = express();
++Définir le port sur lequel le serveur écoutera les requêtes : const port = process.env.PORT || 3000.
+
+.Configuration des routes:
+app.get('/', (req, res) => { /* traitement de la requête */ }).
+
+.Configuration du serveur pour servir les fichiers statiques de React.js:
+ une fois les routes définies , faire app.use(express.static('build')); et remplacer build par le repertoire contenant les fichiers statiques.
+
+.Démarrage du serveur :
+pour démarrer le serveur et écouter les requêtes entrantes : app.listen(port, () => console.log(Server running on port ${port})).
+
+.Test du serveur localement:
+Exécutez "node server.js", puis acceder à l'application via le navigateur avec localhost.
+
+Test et Maintenances du modèle:
+Les performances d'un modèle de machine learning peuvent se dégrader au fil du temps en raison de changements dans les données d'entrée, des évolutions dans les comportements des utilisateurs ou de l'évolution de  l'environnement. La surveillance continue du modèle  permet de détecter ces dégradations et de prendre les mesures appropriées pour les corriger et éviter des dépenses conséquentes.
+
+Plusieurs outils sont mis à notre disposition pour s'assurer de la performance continue du modèle,nous avons par exemple MLFlow et BentoML.
+...(Developpement de MLFlow et BentoML).
+
+Conclusion:
