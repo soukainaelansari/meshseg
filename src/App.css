@@ -455,7 +455,7 @@ background-image: url('./assets/img/HD-wallpaper-plain-purple-background-purple.
    background: #FFFFFF;
   border-radius: 64px;
   color: #121212;
-  padding: 85px 125px;
+  padding: 100px 400px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -465,8 +465,11 @@ background-image: url('./assets/img/HD-wallpaper-plain-purple-background-purple.
      margin: 5em;
    line-height: 1.2em;
    font-weight: 700;
+     box-sizing: border-box;
+     box-shadow: 10px 5px 5px purple;
 
   }
+
 
 
   .file-inputs {
